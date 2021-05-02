@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Button from '../../UI/Button/Button';
 
-import styled from './GoalInput.module.css';
+import styles from './GoalInput.module.css';
 
 // used STYLED COMPONENTS
 // import styled from 'styled-components';
@@ -55,7 +55,9 @@ const GoalInput = (props) => {
   return (
     <form onSubmit={formSubmitHandler}>
       {/* <FormControl invalid={!isValid}> */}
-      <div className={styled['form-control']}>
+      <div
+        className={`${styles['form-control']} ${!isValid && styles.invalid}`}
+      >
         <label>Make A Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
       </div>
