@@ -50,6 +50,7 @@ const GoalInput = (props) => {
       return;
     }
     props.onAddGoal(enteredValue);
+    setEnteredValue('');
   };
 
   return (
@@ -59,7 +60,11 @@ const GoalInput = (props) => {
         className={`${styles['form-control']} ${!isValid && styles.invalid}`}
       >
         <label>Make A Goal</label>
-        <input type="text" onChange={goalInputChangeHandler} />
+        <input
+          type="text"
+          value={enteredValue}
+          onChange={goalInputChangeHandler}
+        />
       </div>
       {/* </FormControl> */}
       <Button type="submit">Add Goal</Button>
